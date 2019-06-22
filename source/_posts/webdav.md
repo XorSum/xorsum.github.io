@@ -12,9 +12,13 @@ sudo apt-get install davfs2
 如果是使用坚果云，修改配置文件/etc/davfs2/davfs2.conf,在文件尾加上'ignore_dav_header 1' [来源](https://zohead.com/archives/davfs2-nutstore/)
 
 挂载
-`sudo mount -t davfs https://dav.jianguoyun.com/dav/  /mnt/webdav/`
+```
+sudo mount -t davfs https://dav.jianguoyun.com/dav/  /mnt/webdav/
+```
 查看
-'ls /mnt/webdav'
+```
+ls /mnt/webdav
+```
 
 为了长期使用:
 
