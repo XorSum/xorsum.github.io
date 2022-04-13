@@ -46,6 +46,6 @@ git clone https://github.com/cisco/ChezScheme.git --depth 1
 
 直接用`scheme`即可打开ChezScheme解释器
 
-![](/assets/img/ChezScheme.png)
+![](/img/ChezScheme.png)
 
 然后就可以愉(tong)快(ku)的写代码啦
