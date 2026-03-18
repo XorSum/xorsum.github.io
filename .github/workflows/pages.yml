@@ -3,30 +3,31 @@ name: Pages
 on:
   push:
     branches:
-      - main  # default branch
+      - main
+
+permissions:
+  contents: write  # 必须：允许写入 gh-pages 分支
 
 jobs:
   pages:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js v16.13.1
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v4  # 升级到 v4
+      
+      - name: Use Node.js
+        uses: actions/setup-node@v4  # 升级到 v4
         with:
-          node-version: '16.13.1'
-      - name: Cache NPM dependencies
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: ${{ runner.OS }}-npm-cache
-          restore-keys: |
-            ${{ runner.OS }}-npm-cache
+          node-version: '20'  # 升级：Node 16 已 EOL，建议 20 或 18
+          cache: 'npm'        # 简化：setup-node v4 内置缓存，无需手动 cache action
+      
       - name: Install Dependencies
-        run: npm install
+        run: npm ci  # 修正：CI 环境用 npm ci 更快、更严格
+      
       - name: Build
         run: npm run build
+      
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4  # 升级到 v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
