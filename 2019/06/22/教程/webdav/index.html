@@ -24,7 +24,7 @@
 <meta property="og:description" content="安装软件 1sudo apt-get install davfs2 如果是使用坚果云，修改配置文件&#x2F;etc&#x2F;davfs2&#x2F;davfs2.conf,在文件尾加上’ignore_dav_header 1’ 来源 挂载 1sudo mount -t davfs https:&#x2F;&#x2F;dav.jianguoyun.com&#x2F;dav&#x2F;  &#x2F;mnt&#x2F;webdav&#x2F; 查看 1ls &#x2F;mnt&#x2F;webdav  为了长期使用">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-06-22T21:17:54.000Z">
-<meta property="article:modified_time" content="2026-04-08T11:24:46.983Z">
+<meta property="article:modified_time" content="2026-04-08T11:25:17.345Z">
 <meta property="article:author" content="XorSum">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -70,7 +70,7 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
 
 
 <body>
@@ -219,22 +219,22 @@
 <p>挂载</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo mount -t davfs https:<span class="hljs-regexp">//</span>dav.jianguoyun.com<span class="hljs-regexp">/dav/</span>  <span class="hljs-regexp">/mnt/</span>webdav/<br></code></pre></td></tr></table></figure>
 <p>查看</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">ls <span class="hljs-regexp">/mnt/</span>webdav<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ls</span> /mnt/webdav<br></code></pre></td></tr></table></figure>
 
 <p>为了长期使用:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> ~/.davfs2/<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;https://webdav.example.com webdavuser webdavpassword&quot;</span> &gt;&gt; ~/.davfs2/secrets<br><span class="hljs-built_in">chmod</span> 0600 ~/.davfs2/secrets<br></code></pre></td></tr></table></figure>
 
 <p>将用户添加进davfs2用户组</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo usermod -<span class="hljs-selector-tag">a</span> -G davfs2 username<br></code></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">sudo usermod -<span class="hljs-selector-tag">a</span> -<span class="hljs-selector-tag">G</span> davfs2 username<br></code></pre></td></tr></table></figure>
 
 <p>编辑/etc/fstab文件，在文件尾添加如下内容，注意用户名换成自己的</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">https</span>://webdav.example.com /home/username/webdav davfs user,noauto,uid=username,file_mode=<span class="hljs-number">600</span>,dir_mode=<span class="hljs-number">700</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
 
 <p>挂载</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">mount <span class="hljs-regexp">/home/u</span>sername/webdav<br></code></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino">mount /home/username/webdav<br></code></pre></td></tr></table></figure>
 
 <p>取消挂载</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">unmount  <span class="hljs-regexp">/home/u</span>sername/webdav<br></code></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino">unmount  /home/username/webdav<br></code></pre></td></tr></table></figure>
 
 
             </div>

@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://xorsum.github.op/img/ChezScheme.png">
 <meta property="article:published_time" content="2018-02-12T20:32:24.000Z">
-<meta property="article:modified_time" content="2026-04-08T11:24:46.982Z">
+<meta property="article:modified_time" content="2026-04-08T11:25:17.345Z">
 <meta property="article:author" content="XorSum">
 <meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary_large_image">
@@ -73,7 +73,7 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 7.2.0"></head>
 
 
 <body>
@@ -219,7 +219,7 @@
               <p>Chez Scheme是传说中最好的scheme实现。虽然它已经开源了，<del>但是貌似还没有出现在apt软件源中。如果想安装的话，就只能自己编译了</del> 。</p>
 <p>现在ubuntu软件仓库中已经有Chez Scheme的软件包了，直接<code>sudo apt install chezscheme</code>就能安装，<code>scheme</code>就能打开使用。所以这篇博客下面的内容作废。</p>
 <h2 id="1-安装依赖"><a href="#1-安装依赖" class="headerlink" title="1. 安装依赖"></a>1. 安装依赖</h2><p>首先我们需要安装一些需要用到的软件，用于下载源代码的版本控制工具git,用于编译的gcc和make,以及最重要的ncurses库和X windows库，没有这俩就会编译失败。</p>
-<h4 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h4><figure class="highlight bash"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs bash">sudo apt install git gcc make libncurses5-dev libx11-dev<br></code></pre></td></tr></table></figure>
+<h4 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h4><figure class="highlight bash"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> apt install git gcc make libncurses5-dev libx11-dev<br></code></pre></td></tr></table></figure>
 
 <h4 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum install -y git gcc make ncurses-devel libX11-devel<br><br></code></pre></td></tr></table></figure>
 
@@ -227,7 +227,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/cisco/ChezScheme.git --depth 1<br></code></pre></td></tr></table></figure>
 
 <h2 id="3-编译与安装"><a href="#3-编译与安装" class="headerlink" title="3. 编译与安装"></a>3. 编译与安装</h2><p>这一步需要的时间与网速和电脑的配置有关</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./configure &amp;&amp; sudo make install<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./configure &amp;&amp; <span class="hljs-built_in">sudo</span> make install<br></code></pre></td></tr></table></figure>
 
 <h2 id="4-使用"><a href="#4-使用" class="headerlink" title="4. 使用"></a>4. 使用</h2><p>直接用<code>scheme</code>即可打开ChezScheme解释器</p>
 <p><img src="/img/ChezScheme.png" srcset="/img/loading.gif" lazyload></p>
